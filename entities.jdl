@@ -1,0 +1,94 @@
+
+entity Company {
+    country String required,
+    name String required,
+    state CompanyState required,
+    license String,
+    start Instant,
+    end Instant,
+    email String,
+    phone String,
+    address String,
+    billingPhone String,
+    billingEmail String,
+    billingAddress String,
+    vatin String
+}
+
+entity Person {
+    name String required,
+    surname String required,
+    email String required,
+    license String,
+    start Instant,
+    end Instant
+}
+
+entity Category {
+    code String required,
+    type Type required,
+    active YesNo required,
+    name String required,
+    label String
+}
+
+entity Coach {
+    country String required,
+    name String required,
+    surname String required,
+    type Type required,
+    email String,
+    phone String,
+    resume String,
+    contact String,
+    lang String
+}
+
+
+entity Video {
+    code String required,
+    type Type required,
+    state VideoState required,
+    name String required,
+    lang String required,
+    url String required
+}
+
+enum YesNo {
+    Y, 
+    N
+}
+
+enum VideoState {
+    CREATED, 
+    PUBLISHED, 
+    ARCHIVED
+}
+
+enum CompanyState {
+    CREATED, 
+    ACTIVE, 
+    CLOSE
+}
+
+enum Type {
+    FITNESS, 
+    WELLNESS
+}
+
+relationship OneToMany {
+    Category to Video{category},
+    Coach to Video{coach}
+}
+
+// Set pagination options
+paginate Company, Person, Category, Coach, Video with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

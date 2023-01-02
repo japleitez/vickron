@@ -1,0 +1,72 @@
+{
+  "applications": "*",
+  "changelogDate": "20230102123000",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "company",
+  "fields": [
+    {
+      "fieldName": "country",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "state",
+      "fieldType": "CompanyState",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "CREATED,ACTIVE,CLOSE"
+    },
+    {
+      "fieldName": "license",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "start",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "end",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "billingPhone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "billingEmail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "billingAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "vatin",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Company",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}
